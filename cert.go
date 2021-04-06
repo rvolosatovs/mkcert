@@ -165,7 +165,7 @@ func (m *mkcert) printHosts(hosts []string) {
 
 func (m *mkcert) generateKey(rootCA bool) (crypto.PrivateKey, error) {
 	if m.ecdsa {
-		return ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+		return ecdsa.GenerateKey(elliptic.P521(), rand.Reader)
 	}
 	if rootCA {
 		return rsa.GenerateKey(rand.Reader, 3072)
